@@ -1,13 +1,15 @@
-package com.dut.trashdetect.activity.main
+package com.dut.trashdetect.ui.main
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import com.dut.trashdetect.R
+import com.dut.trashdetect.base.BaseActivity
+import com.dut.trashdetect.base.BaseInput
+import com.dut.trashdetect.base.ViewModelProviderFactory
 import com.dut.trashdetect.databinding.ActivityMainBinding
 import com.dut.trashdetect.ml.AutoModel25062022
 import org.tensorflow.lite.support.common.TensorProcessor
@@ -18,9 +20,20 @@ import org.tensorflow.lite.support.image.ops.ResizeOp
 import org.tensorflow.lite.support.label.TensorLabel
 
 
-class MainActivity : AppCompatActivity() {
-    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
+
     private val trashModel by lazy { AutoModel25062022.newInstance(this@MainActivity) }
+
+    override fun getLazyBinding() = lazy { ActivityMainBinding.inflate(layoutInflater) }
+    override fun getLazyViewModel() = viewModels<MainViewModel> {
+        ViewModelProviderFactory(BaseInput.NoInput)
+    }
+
+    override fun setupInit() {
+        initViews()
+        initListener()
+        observe()
+    }
 
     companion object {
         private val CLASSES = arrayListOf(
@@ -34,15 +47,6 @@ class MainActivity : AppCompatActivity() {
             "plastic",
             "trash"
         )
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
-
-        initViews()
-        initListener()
-        observe()
     }
 
     private fun initViews() {

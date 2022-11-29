@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "193885779843",
+    "firebase_url": "https://trashclassificationapp-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "trashclassificationapp",
+    "storage_bucket": "trashclassificationapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193885779843:android:806479203d6ae5123da8b6",
+        "android_client_info": {
+          "package_name": "com.dut.trashdetect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193885779843-1rtedpn0lh98raiofccid8gghlj6ud2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYl55XJsRqNCNiqvqaa8ikcgAmIAG_F5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193885779843-1rtedpn0lh98raiofccid8gghlj6ud2m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

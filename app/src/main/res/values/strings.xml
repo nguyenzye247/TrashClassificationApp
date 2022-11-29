@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TrashDetect</string>
+    <string name="login">Login</string>
 </resources>
