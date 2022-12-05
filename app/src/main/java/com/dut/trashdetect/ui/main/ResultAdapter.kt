@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.dut.trashdetect.databinding.ItemClassificationBinding
-import kotlin.math.roundToInt
+import com.dut.trashdetect.util.Helpers
 
 class ResultAdapter(
     private val results: ArrayList<com.dut.trashdetect.model.Result>
@@ -19,9 +19,8 @@ class ResultAdapter(
                 val numb = (adapterPosition + 1).toString() + "."
                 tvNumb.text = numb
                 tvClass.text = result.name
-                val percent = (result.percentage * 1000.0).roundToInt() / 1000.0
-                val percentText = "${percent * 100}%"
-                tvPercentage.text = percentText
+                val textPercent = Helpers.roundPercent(result.percentage)
+                tvPercentage.text = textPercent
             }
         }
     }

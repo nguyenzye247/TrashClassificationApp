@@ -100,11 +100,11 @@
         android:fontFamily="@font/inter_semibold"
         android:maxLines="1"
         android:textColor="@color/viva_magenta"
-        android:textSize="24sp"
+        android:textSize="23sp"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toTopOf="@id/tv_result_percentage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/cv_selected_image"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cv_selected_image"
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="Is CARDBOARD" />

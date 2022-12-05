@@ -52,7 +52,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     private val captureImageActivityResultLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        if (result.resultCode == RESULT_OK && result.data != null) {
+        if (result.resultCode == RESULT_OK) {
             setCapturedPic()
         }
     }
@@ -308,7 +308,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                 Toast.makeText(this@MainActivity, "Something went wrong", Toast.LENGTH_LONG).show()
             }
         } else {
-            Toast.makeText(this@MainActivity, "You haven't picked Image", Toast.LENGTH_LONG).show()
+            Toast.makeText(this@MainActivity, "No picture selected", Toast.LENGTH_LONG).show()
         }
     }
 
