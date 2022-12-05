@@ -39,11 +39,12 @@ class HistoryActivity : BaseActivity<ActivityHistoryBinding, HistoryViewModel>()
             val docRef = firebaseFireStore.collection(RESULT_DOC)
                 .whereEqualTo("userId", uid)
             docRef.get()
-                .addOnSuccessListener {
-                    it?.let { documents ->
+                .addOnSuccessListener { snapshot ->
+                    snapshot?.let { documents ->
                         documents.forEach { document ->
                             results.add(document.toObject(UserResult::class.java))
                         }
+                        results.sortByDescending { it.createdAt }
                     }
                     binding.ivEmpty.isVisible = results.isEmpty()
                     historyItemAdapter.notifyDataSetChanged()
