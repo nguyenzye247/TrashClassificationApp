@@ -13,7 +13,7 @@
         android:theme="@style/Theme.TrashDetect"
         tools:targetApi="31">
         <activity
-            android:name=".activity.main.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-            android:name=".activity.splash.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true">
 
         </activity>

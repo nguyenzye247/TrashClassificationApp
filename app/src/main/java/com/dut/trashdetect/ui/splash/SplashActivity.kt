@@ -1,4 +1,4 @@
-package com.dut.trashdetect.activity.splash
+package com.dut.trashdetect.ui.splash
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
