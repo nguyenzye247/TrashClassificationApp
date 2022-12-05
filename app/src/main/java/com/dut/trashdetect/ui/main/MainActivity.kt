@@ -258,15 +258,20 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
             btnInfo.isVisible = true
             tvResult.isVisible = true
             val maxClass = ClassificationUtils.getHighestClass(probabilities)
-            val result = "Is ${maxClass.key}"
-            val textPercent = roundPercent(maxClass.value)
-            tvResult.text = result
-            tvResultPercentage.text = textPercent
-            saveAndGetImageUrl(
-                path,
-                maxClass.key,
-                ((maxClass.value * 1000.0).roundToInt() / 1000.0).toFloat()
-            )
+            if (maxClass.value > 0.5) {
+                val result = "Is ${maxClass.key}"
+                val textPercent = roundPercent(maxClass.value)
+                tvResult.text = result
+                tvResultPercentage.text = textPercent
+                saveAndGetImageUrl(
+                    path,
+                    maxClass.key,
+                    ((maxClass.value * 1000.0).roundToInt() / 1000.0).toFloat()
+                )
+            } else {
+                val result = "Undefined"
+                tvResult.text = result
+            }
         }
     }
 
