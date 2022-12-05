@@ -8,7 +8,21 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="viva_magenta">#B73C58</color>
+
+    <color name="white_100">#eeeef1</color>
+    <color name="white_200">#F4F4F6</color>
+    <color name="white_300">#F8F8F8</color>
+
+    <color name="blue_100">#1c65d2</color>
+    <color name="blue_200">#0065ff</color>
+
     <color name="black_100">#172b4d</color>
+    <color name="black_200">#213454</color>
 
     <color name="grey_100">#919bab</color>
+    <color name="grey_200">#8590a2</color>
+    <color name="grey_300">#7e8a9d</color>
+    <color name="grey_400">#828c9c</color>
+    <color name="grey_500">#7f899e</color>
 </resources>

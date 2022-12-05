@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">TrashDetect</string>
     <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="new_to_this_app">New to this app?</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full name</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="trash_classification">Trash Classification</string>
+    <string name="classification_results">Classification Results</string>
+    <string name="slash">\u0020-\u0020</string>
+    <string name="permis_denied">Permission Denied</string>
+    <string name="permis_unable_message">Our app is unable to request your device camera permission. You need to go to your app setting and set camera permission as allow so that you can begin to use this feature.</string>
+    <string name="go_to_setting">GO TO APP SETTING</string>
+    <string name="cancel">Cancel</string>
+    <string name="permis_denied_message">Our app requires this permission to access your device\'s camera functionality so that you can take your picture and set it as your avatar in the app. Are you sure you want to deny this permission?</string>
+    <string name="sure">SURE</string>
+    <string name="logout_confirm">You sure want to log out?</string>
+    <string name="let_allow">Let me allow it</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="select_picture">Select or take a picture</string>
+    <string name="classification_history">Classification History</string>
 </resources>
