@@ -2,7 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.content_provider.providers.READ_DATABASE" />
+    <uses-permission android:name="com.android.content_provider.providers.WRITE_DATABASE" />
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,7 +20,34 @@
         android:theme="@style/Theme.TrashDetect"
         tools:targetApi="31">
         <activity
-            android:name=".activity.main.MainActivity"
+            android:name=".ui.main.MainActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".ui.signin.SignInActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".ui.signup.SignUpActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity android:name=".ui.history.HistoryActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity android:name=".ui.test.TestActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,13 +57,18 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-        <activity
-            android:name=".activity.splash.SplashActivity"
-            android:exported="true">
 
         </activity>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.android.broadcast_receiver"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+            </meta-data>
+        </provider>
     </application>
 
 </manifest>
