@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.FrameLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dut.trashdetect.databinding.BottomSheetResultBinding
 import com.dut.trashdetect.model.Result
@@ -48,12 +49,11 @@ class ResultBottomSheet(
     }
 
     private fun initViews() {
-        dialog?.window?.apply {
-            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            setLayout(
-                WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.WRAP_CONTENT,
-            )
+        dialog?.setOnShowListener {
+            val bottomSheet =
+                dialog?.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet) as FrameLayout
+            BottomSheetBehavior.from(bottomSheet).state = BottomSheetBehavior.STATE_EXPANDED
+            (binding.root.parent as View).setBackgroundColor(Color.TRANSPARENT)
         }
         binding.apply {
             val results = arrayListOf<Result>()
